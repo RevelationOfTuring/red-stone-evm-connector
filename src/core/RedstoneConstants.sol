@@ -16,9 +16,13 @@ contract RedstoneConstants {
 
     // Solidity and YUL constants
     uint256 internal constant STANDARD_SLOT_BS = 32;
+    // 内存中存储空闲指针的内存地址
     uint256 internal constant FREE_MEMORY_PTR = 0x40;
     uint256 internal constant BYTES_ARR_LEN_VAR_BS = 32;
+    // revert(string)触发的revert而返回的bytes memory result中，要跨过4字节（selector）+ 32字节（字符串数据开始偏移量）+32字节（字符串长度）= 68字节后，才能拿到具体的字符串数据
     uint256 internal constant REVERT_MSG_OFFSET = 68; // Revert message structure described here: https://ethereum.stackexchange.com/a/66173/106364
+    // 当 Solidity 执行 revert("message") 时，它会返回 Error(string) 的 ABI 编码
+    // 而错误Error(string)的selector就是0x08c379a0，可以通过该MASK来识别外部合约revert的类型是否是revert("message")
     uint256 internal constant STRING_ERR_MESSAGE_MASK =
         0x08c379a000000000000000000000000000000000000000000000000000000000;
 
