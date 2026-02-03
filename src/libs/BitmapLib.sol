@@ -17,6 +17,7 @@ library BitmapLib {
     }
 
     // 是检查 bitmap 中指定索引 bitIndex 的位置是 0 还是 1
+    // 如果是0，返回false；否则返回true
     function getBitFromBitmap(
         uint256 bitmap,
         uint256 bitIndex

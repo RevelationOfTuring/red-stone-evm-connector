@@ -226,7 +226,7 @@ contract CalldataExtractor is RedstoneConstants {
         );
     }
 
-    // 该函数负责从 Calldata 的原始字节流中，精准地抠出喂价 ID（如 ETH 的 Hash）和具体的报价数值
+    // 该函数负责从 Calldata 的原始字节流中，精准地抠出Feed Id和具体的报价数值
     // 入参：
     // - dataPointNegativeOffset：该Data Point的负偏移量
     // - dataPointValueByteSize：该Data Package中每个报价的值所占的字节长度

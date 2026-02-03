@@ -52,7 +52,9 @@ contract RedstoneConstants {
     uint256
         internal constant TIMESTAMP_NEGATIVE_OFFSET_IN_DATA_PACKAGE_WITH_STANDARD_SLOT_BS =
         104; // SIG_BS + DATA_POINTS_COUNT_BS + DATA_POINT_VALUE_BYTE_SIZE_BS + STANDARD_SLOT_BS
+    // 一个数据包中，除去Data Points以外的字节长度，即Timestamp + Data Point Value Size + Data Points Count+签名的字节长度 = 6+4+3+65=78
     uint256 internal constant DATA_PACKAGE_WITHOUT_DATA_POINTS_BS = 78; // DATA_POINT_VALUE_BYTE_SIZE_BS + TIMESTAMP_BS + DATA_POINTS_COUNT_BS + SIG_BS
+    // 一个数据包中，除去签名和Data Points以外的字节长度，即Timestamp + Data Point Value Size + Data Points Count的字节长度 = 6+4+3=13
     uint256 internal constant DATA_PACKAGE_WITHOUT_DATA_POINTS_AND_SIG_BS = 13; // DATA_POINT_VALUE_BYTE_SIZE_BS + TIMESTAMP_BS + DATA_POINTS_COUNT_BS
     // marker 9 bytes + 32 bytes
     uint256 internal constant REDSTONE_MARKER_BS_PLUS_STANDARD_SLOT_BS = 41; // REDSTONE_MARKER_BS + STANDARD_SLOT_BS
